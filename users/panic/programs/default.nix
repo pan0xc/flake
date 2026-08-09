@@ -24,7 +24,6 @@
       apostrophe
       amberol
       celluloid
-      flclash
       gnome-extension-manager
       qq
       refine

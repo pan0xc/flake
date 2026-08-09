@@ -27,4 +27,12 @@
     sushi
     yelp
   ];
+
+  environment.systemPackages = with pkgs; [
+    glycin-thumbnailer
+    ffmpegthumbnailer
+  ];
+
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 }

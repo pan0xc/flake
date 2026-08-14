@@ -13,6 +13,7 @@
     ./ibus.nix
     ./vscode.nix
     ./git.nix
+    ./helix.nix
   ];
 
   programs = {

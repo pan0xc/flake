@@ -57,6 +57,12 @@
 
     fwupd.enable = true;
 
+    mihomo = {
+      enable = true;
+      configFile = "/etc/mihomo/config.yaml";
+      tunMode = true;
+    };
+
     printing = {
       enable = true;
       browsing = true;

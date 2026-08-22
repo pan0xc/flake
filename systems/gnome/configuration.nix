@@ -26,6 +26,13 @@
   };
 
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.graphics.enable = true;
-  hardware.nvidia.open = true;
+  hardware.graphics = {
+    enable = true;
+  };
+  hardware.nvidia = {
+    open = true;
+    dynamicBoost.enable = true;
+    nvidiaSettings = false;
+    powerManagement.enable = true;
+  };
 }

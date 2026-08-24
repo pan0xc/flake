@@ -27,7 +27,6 @@
       celluloid
       gnome-extension-manager
       qq
-      refine
       resources
 
       # cmd

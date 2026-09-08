@@ -47,6 +47,11 @@
   security.rtkit.enable = true;
 
   services = {
+    dae = {
+      enable = true;
+      configFile = "/etc/dae/config.dae";
+    };
+
     pipewire = {
       enable = true;
       pulse.enable = true;
@@ -56,12 +61,6 @@
     pulseaudio.enable = false;
 
     fwupd.enable = true;
-
-    mihomo = {
-      enable = true;
-      configFile = "/etc/mihomo/config.yaml";
-      tunMode = true;
-    };
 
     printing = {
       enable = true;

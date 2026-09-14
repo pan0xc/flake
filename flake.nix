@@ -4,11 +4,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
-    deploy-rs = {
-      url = "github:serokell/deploy-rs";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
@@ -25,11 +20,6 @@
       url = "github:snugnug/hjem-rum";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -43,7 +33,6 @@
 
       imports = [
         ./systems/gnome
-        ./systems/deploy.nix
       ];
 
       perSystem =
@@ -64,8 +53,6 @@
             packages = with pkgs; [
               nixd
               nixfmt
-              deploy-rs
-              sops
             ];
           };
         };

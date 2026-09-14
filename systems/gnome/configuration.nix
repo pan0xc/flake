@@ -11,7 +11,6 @@
     ../desktop.nix
 
     nixos-hardware.nixosModules.common-cpu-intel
-    sops-nix.nixosModules.sops
   ];
 
   networking.hostName = "nixos";
@@ -19,11 +18,6 @@
   environment.systemPackages = with pkgs; [
 
   ];
-
-  sops = {
-    age.sshKeyPaths = [ "/home/panic/.config/sops/age/keys.txt" ];
-    defaultSopsFile = ./secrets/secrets.yaml;
-  };
 
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.graphics = {

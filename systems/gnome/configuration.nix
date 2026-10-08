@@ -25,6 +25,7 @@
   };
   hardware.nvidia = {
     open = true;
+    package = config.boot.kernelPackages.nvidiaPackages.latest;
     dynamicBoost.enable = true;
     nvidiaSettings = false;
     powerManagement.enable = true;

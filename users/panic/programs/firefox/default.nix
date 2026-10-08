@@ -15,10 +15,4 @@
       "image.jxl.enabled" = true;
     };
   };
-
-  hjem.users.panic = {
-    packages = with pkgs; [
-      firefox-gnome-theme
-    ];
-  };
 }

@@ -1,0 +1,62 @@
+global {
+  wan_interface: auto
+  log_level: info
+  allow_insecure: false
+  auto_config_kernel_parameter: true
+}
+
+subscription {
+  main: ''
+}
+
+dns {
+  upstream {
+    googledns: 'tcp+udp://dns.google:53'
+    alidns: 'udp://dns.alidns.com:53'
+  }
+
+  routing {
+    request {
+      qname(geosite:cn) -> alidns
+      fallback: googledns
+    }
+  }
+}
+
+group {
+  proxy {
+    filter: subtag(main) && name(keyword: '香港')
+    policy: min_moving_avg
+  }
+
+  ai {
+    filter: subtag(main) && name(keyword: '狮城')
+    policy: min_moving_avg
+  }
+
+  stream {
+    filter: subtag(main) && name(keyword: '香港')
+    policy: min_moving_avg
+  }
+}
+
+routing {
+  pname(NetworkManager) -> direct
+  dip(224.0.0.0/3, 'ff00::/8') -> direct
+
+  dport(22) -> direct
+
+  l4proto(udp) && dport(443) -> block
+  dip(geoip:private) -> direct
+  dip(geoip:cn) -> direct
+  domain(geosite:cn) -> direct
+
+  domain(geosite:openai) -> ai
+
+  domain(
+    geosite:spotify,
+    geosite:youtube
+  ) -> stream
+
+  fallback: proxy
+}

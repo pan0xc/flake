@@ -22,7 +22,6 @@
   hjem.users.panic = {
     packages = with pkgs; [
       # app
-      apostrophe
       amberol
       celluloid
       gnome-extension-manager

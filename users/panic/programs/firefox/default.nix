@@ -12,7 +12,7 @@
       "browser.translations.enable" = false;
       "middlemouse.paste" = false;
       "media.eme.enabled" = true;
-      "image.jxl.enabled" = true;
+      "sidebar.verticalTabs" = true;
     };
   };
 }

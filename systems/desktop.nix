@@ -49,7 +49,7 @@
   services = {
     dae = {
       enable = true;
-      configFile = "/etc/dae/config.dae";
+      configFile = "/etc/nixos/config/dae/config.dae";
     };
 
     pipewire = {

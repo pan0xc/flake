@@ -5,6 +5,8 @@
 
 {
   imports = [
+    ./panic
+
     inputs.hjem.nixosModules.hjem
   ];
 

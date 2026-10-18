@@ -1,15 +1,11 @@
 {
   config,
-  pkgs,
   inputs,
   ...
 }:
 
 {
   imports = with inputs; [
-    ./hardware-configuration.nix
-    ../desktop.nix
-
     nixos-hardware.nixosModules.common-cpu-intel
   ];
 
@@ -24,4 +20,6 @@
     nvidiaSettings = false;
     powerManagement.enable = true;
   };
+
+  system.stateVersion = "26.05";
 }

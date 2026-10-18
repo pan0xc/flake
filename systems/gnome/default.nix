@@ -1,15 +1,44 @@
 {
-  inputs,
-  lib,
+  pkgs,
   ...
 }:
 
 {
-  flake.nixosConfigurations.nixos = lib.nixosSystem {
-    modules = [
-      ./configuration.nix
-      ./gnome.nix
-    ];
-    specialArgs = { inherit inputs; };
-  };
+  imports = [
+    ./configuration.nix
+    ./hardware-configuration.nix
+  ];
+
+  environment.gnome.excludePackages = with pkgs; [
+    decibels
+    epiphany
+    gnome-calendar
+    gnome-characters
+    gnome-clocks
+    gnome-connections
+    gnome-console
+    gnome-contacts
+    gnome-disk-utility
+    gnome-font-viewer
+    gnome-logs
+    gnome-maps
+    gnome-music
+    gnome-system-monitor
+    gnome-tour
+    gnome-weather
+    seahorse
+    showtime
+    simple-scan
+    snapshot
+    sushi
+    yelp
+  ];
+
+  environment.systemPackages = with pkgs; [
+    glycin-thumbnailer
+    ffmpegthumbnailer
+  ];
+
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 }

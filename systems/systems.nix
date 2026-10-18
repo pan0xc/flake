@@ -19,6 +19,9 @@
     };
   };
 
+  systemd.services.automatic-timezoned.enable = true;
+  time.timeZone = "Asia/Shanghai";
+
   nix = {
     gc = {
       automatic = true;

@@ -13,12 +13,6 @@
     nixos-hardware.nixosModules.common-cpu-intel
   ];
 
-  networking.hostName = "nixos";
-
-  environment.systemPackages = with pkgs; [
-
-  ];
-
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.graphics = {
     enable = true;

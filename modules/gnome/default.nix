@@ -4,11 +4,6 @@
 }:
 
 {
-  imports = [
-    ./configuration.nix
-    ./hardware-configuration.nix
-  ];
-
   environment.gnome.excludePackages = with pkgs; [
     decibels
     epiphany

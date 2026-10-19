@@ -35,7 +35,7 @@
       systems = import inputs.systems;
 
       imports = [
-        ./systems
+        ./hosts/nixos
       ];
 
       perSystem =

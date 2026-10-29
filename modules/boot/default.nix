@@ -19,16 +19,26 @@
     };
 
     consoleLogLevel = 0;
-    initrd = {
-      verbose = false;
-      systemd.enable = true;
-    };
     plymouth.enable = true;
     kernelParams = [
       "quiet"
       "plymouth.use-simpledrm"
       "i915.fastboot=1"
     ];
+
+    tmp = {
+      useZram = true;
+      zramSettings = {
+        zram-size = "min(ram, 8192)";
+        compression-algorithm = "zstd";
+        fs-type = "ext4";
+      };
+    };
+  };
+
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd";
   };
 
   environment.systemPackages = with pkgs; [

@@ -8,6 +8,8 @@
   ];
 
   services = {
+    flatpak.enable = true;
+
     pipewire = {
       enable = true;
       pulse.enable = true;
@@ -26,9 +28,8 @@
     zram-generator = {
       enable = true;
       settings = {
-        zram0 = {
+        zram1 = {
           zram-size = "min(ram, 8192)";
-          compression-algorithm = "zstd";
           swap-priority = 1000;
         };
       };

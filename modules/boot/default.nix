@@ -27,12 +27,8 @@
     ];
 
     tmp = {
-      useZram = true;
-      zramSettings = {
-        zram-size = "min(ram, 8192)";
-        compression-algorithm = "zstd";
-        fs-type = "ext4";
-      };
+      useTmpfs = true;
+      tmpfsSize = "50%";
     };
   };
 

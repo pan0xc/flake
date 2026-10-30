@@ -39,6 +39,8 @@
   zramSwap = {
     enable = true;
     algorithm = "zstd";
+    memoryPercent = 100;
+    memoryMax = 8192 * 1024 * 1024;
   };
 
   environment.systemPackages = with pkgs; [

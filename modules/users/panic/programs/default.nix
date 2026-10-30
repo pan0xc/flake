@@ -30,6 +30,7 @@
 
       # cmd
       fastfetch
+      go-musicfox
     ];
   };
 }

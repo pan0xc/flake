@@ -28,18 +28,19 @@
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/ceea0105-b055-4609-8fcd-ecba7cc4d03d";
     fsType = "btrfs";
+    options = [ "compress=zstd,noatime" ];
   };
 
   fileSystems."/home" = {
     device = "/dev/disk/by-uuid/ceea0105-b055-4609-8fcd-ecba7cc4d03d";
     fsType = "btrfs";
-    options = [ "subvol=home" ];
+    options = [ "subvol=home,compress=zstd,noatime" ];
   };
 
   fileSystems."/nix" = {
     device = "/dev/disk/by-uuid/ceea0105-b055-4609-8fcd-ecba7cc4d03d";
     fsType = "btrfs";
-    options = [ "subvol=nix" ];
+    options = [ "subvol=nix,compress=zstd,noatime" ];
   };
 
   fileSystems."/boot" = {

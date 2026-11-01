@@ -24,6 +24,7 @@
       # app
       amberol
       celluloid
+      fractal
       gnome-extension-manager
       qq
       resources

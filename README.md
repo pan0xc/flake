@@ -1,6 +1,6 @@
-# panic's flake profile
+# flake
 
-**panic's flake profile** 是我个人的 Nix Flakes 配置。本仓库包含其全部源代码，用于管理我的系统环境与相关配置。
+**flake** 是我个人的 Nix Flakes 配置。本仓库包含其全部源代码，用于管理我的系统环境与相关配置。
 
 ## 致谢
 

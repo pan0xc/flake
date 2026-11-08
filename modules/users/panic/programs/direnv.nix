@@ -9,5 +9,10 @@
     enable = true;
 
     integrations.fish.enable = true;
+    settings = {
+      global = {
+        warn_timeout = "0s";
+      };
+    };
   };
 }

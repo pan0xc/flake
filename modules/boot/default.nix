@@ -14,7 +14,12 @@
         enable = true;
         maxGenerations = 10;
         enrollConfig = true;
-        secureBoot.enable = true;
+        secureBoot = {
+          enable = true;
+          sbctl = pkgs.sbctl;
+          autoGenerateKeys = true;
+          autoEnrollKeys.enable = true;
+        };
       };
     };
 
@@ -38,8 +43,4 @@
     memoryPercent = 100;
     memoryMax = 8192 * 1024 * 1024;
   };
-
-  environment.systemPackages = with pkgs; [
-    sbctl
-  ];
 }

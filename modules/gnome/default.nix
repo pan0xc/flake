@@ -14,6 +14,7 @@
     gnome-console
     gnome-contacts
     gnome-disk-utility
+    gnome-extensions-app
     gnome-font-viewer
     gnome-logs
     gnome-maps
@@ -26,7 +27,6 @@
     showtime
     simple-scan
     snapshot
-    sushi
     yelp
   ];
 
